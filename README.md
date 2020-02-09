@@ -10,13 +10,7 @@ Inspired by [wifi-password](https://github.com/rauchg/wifi-password)
 
 **1. Install it**
 
-With [Homebrew](https://github.com/Homebrew/homebrew):
-
-```
-$ brew install wifi-qr
-```
-
-or with `curl`:
+With `curl`:
 
 ```
 curl -L https://raw.github.com/aranw/wifi-qr/master/wifi-qr.sh -o ~/bin/wifi-qr && chmod +x ~/bin/wifi-qr
