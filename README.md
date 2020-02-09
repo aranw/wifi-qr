@@ -4,6 +4,8 @@
 
 wifi-qr attempts to simplify the process of sharing passwords with mobiles by generating a wifi qr code where mobile uses can scan to connect to the wifi network.
 
+wifi-qr depends on [qrencode](https://linux.die.net/man/1/qrencode)
+
 Currently this script only supports macOS.
 
 Inspired by [wifi-password](https://github.com/rauchg/wifi-password)
@@ -13,6 +15,14 @@ Inspired by [wifi-password](https://github.com/rauchg/wifi-password)
 **1. Install it**
 
 With `curl`:
+
+Prerequisite `qrencode`
+
+With [Homebrew](https://github.com/Homebrew/homebrew):
+
+```
+$ brew install qrenode
+```
 
 ```
 curl -L https://raw.github.com/aranw/wifi-qr/master/wifi-qr.sh -o ~/bin/wifi-qr && chmod +x ~/bin/wifi-qr
