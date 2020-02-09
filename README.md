@@ -1,5 +1,7 @@
 # wifi-qr
 
+<p align="center"><img src="/img/wifi-qr.gif?raw=true"/></p>
+
 wifi-qr attempts to simplify the process of sharing passwords with mobiles by generating a wifi qr code where mobile uses can scan to connect to the wifi network.
 
 Currently this script only supports macOS.
