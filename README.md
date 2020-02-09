@@ -16,7 +16,7 @@ Inspired by [wifi-password](https://github.com/rauchg/wifi-password)
 
 With [Homebrew](https://github.com/Homebrew/homebrew):
 
-```
+``` shell
 $ brew install qrenode
 ```
 
@@ -24,9 +24,8 @@ $ brew install qrenode
 
 With `curl`:
 
-
-```
-curl -L https://raw.github.com/aranw/wifi-qr/master/wifi-qr.sh -o ~/bin/wifi-qr && chmod +x ~/bin/wifi-qr
+``` shell
+$ curl -L https://raw.github.com/aranw/wifi-qr/master/wifi-qr.sh -o ~/bin/wifi-qr && chmod +x ~/bin/wifi-qr
 ```
 
 If you don't have `~/bin` in your `$PATH`, replace it with `/usr/local/bin` or
@@ -36,13 +35,13 @@ similar.
 
 To get the password for the WiFi you're currently logged onto:
 
-```
+``` shell
 $ wifi-qr
 ```
 
 To get it for a specific SSID:
 
-```
+``` shell
 $ wifi-qr <ssid>
 ```
 
