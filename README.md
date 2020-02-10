@@ -17,7 +17,7 @@ Inspired by [wifi-password](https://github.com/rauchg/wifi-password)
 With [Homebrew](https://github.com/Homebrew/homebrew):
 
 ``` shell
-$ brew install qrenode
+$ brew install qrencode
 ```
 
 ### Install
