@@ -34,7 +34,7 @@ function linux {
     fi
   fi
   
-  pwd="`sudo grep psk= /etc/NetworkManager/system-connections/${ssid}* | cut -d "=" -f2`"
+  pwd=$(sudo sed -e '/^psk=/!d' -e 's/psk=//' "/etc/NetworkManager/system-connections/${ssid}")
 
   if [ "" == "$pwd" ]; then
     echo "ERROR: Could not get password. Did you enter your credentials?" >&2
