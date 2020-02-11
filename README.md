@@ -6,7 +6,7 @@ wifi-qr attempts to simplify the process of sharing passwords with mobiles by ge
 
 wifi-qr depends on [qrencode](https://linux.die.net/man/1/qrencode)
 
-Currently this script only supports macOS.
+Currently this script only supports macOS and linux (with Network Manager).
 
 Inspired by [wifi-password](https://github.com/rauchg/wifi-password)
 
@@ -16,7 +16,7 @@ Inspired by [wifi-password](https://github.com/rauchg/wifi-password)
 
 With [Homebrew](https://github.com/Homebrew/homebrew):
 
-``` shell
+```shell
 $ brew install qrencode
 ```
 
@@ -24,7 +24,7 @@ $ brew install qrencode
 
 With `curl`:
 
-``` shell
+```shell
 $ curl -L https://raw.github.com/aranw/wifi-qr/master/wifi-qr.sh -o ~/bin/wifi-qr && chmod +x ~/bin/wifi-qr
 ```
 
@@ -35,13 +35,13 @@ similar.
 
 To get the password for the WiFi you're currently logged onto:
 
-``` shell
+```shell
 $ wifi-qr
 ```
 
 To get it for a specific SSID:
 
-``` shell
+```shell
 $ wifi-qr <ssid>
 ```
 
