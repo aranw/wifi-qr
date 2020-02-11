@@ -89,7 +89,7 @@ function mac {
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   linux 
   exit 0
-elif [[ "$OSTYPE" == "darwin" ]]; then
+elif [[ "$OSTYPE" == *"darwin"* ]]; then
   mac
   exit 0
 fi
