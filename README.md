@@ -20,6 +20,12 @@ With [Homebrew](https://github.com/Homebrew/homebrew):
 $ brew install qrencode
 ```
 
+With apt for Ubuntu 18.04 (might work with other Linux distributions too)
+
+```shell
+$ sudo apt install qrencode
+```
+
 ### Install
 
 With `curl`:
