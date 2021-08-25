@@ -27,7 +27,7 @@ function linux {
     fi
   else
     # get current ssid
-    ssid="`nmcli -t -f active,ssid dev wifi | egrep '^yes' | cut -d\: -f2`"
+    ssid="`nmcli -t -f in-use,ssid dev wifi | egrep '^\*' | cut -d\: -f2`"
     if [ "$ssid" = "" ]; then
       echo "ERROR: Could not retrieve current SSID. Are you connected?" >&2
       exit 1
