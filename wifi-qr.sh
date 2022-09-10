@@ -15,6 +15,34 @@ if [[ "$1" == "--" ]]; then shift; fi
 # merge args for SSIDs with spaces
 args="$@"
 
+function yes_or_no {
+  while true; do
+    read -p "$* [y/N]: " yn
+    yn=${yn:-n}  # If "yn" is empty (no user input) default to "n"
+    case $yn in
+      [Yy]*) return 0 ;;  
+      [Nn]*) return 1 ;;
+    esac
+  done
+}
+
+if yes_or_no "Generate image?"; then
+  flag_generate_image="yes"
+  default_qr_code_path="/tmp/wifi-qr.png"
+  read -e -p "Enter the path to save the qr code image file to [${default_qr_code_path}]: " qr_code_path
+  qr_code_path=${qr_code_path:-${default_qr_code_path}}
+fi
+
+function generate_qr_code {
+  qr_text="WIFI:T:WPA;S:${ssid};P:${pwd};;"
+
+  if [ $flag_generate_image == "yes" ]; then
+    echo $qr_text | qrencode -o $qr_code_path
+  else
+    echo $qr_text | qrencode -t UTF8
+  fi
+}
+
 function linux {
   # check for user-provided ssid 
   if [ "" != "$args" ]; then
@@ -41,7 +69,7 @@ function linux {
     exit 1
   fi
 
-  echo "WIFI:T:WPA;S:${ssid};P:${pwd};;" | qrencode -t UTF8
+  generate_qr_code
 }
 
 
@@ -82,7 +110,7 @@ function mac {
     exit 1
   fi
 
-  echo "WIFI:T:WPA;S:${ssid};P:${pwd};;" | qrencode -t UTF8
+  generate_qr_code
 }
 
 
